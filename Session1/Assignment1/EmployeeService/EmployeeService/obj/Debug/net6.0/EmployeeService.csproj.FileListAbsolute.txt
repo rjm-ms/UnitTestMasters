@@ -10,15 +10,3 @@ D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\ob
 D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\refint\EmployeeService.dll
 D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.pdb
 D:\UnitTest Masters\UnitTestMasterAssignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\ref\EmployeeService.dll
-C:\Users\2120451\Source\Repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.deps.json
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.dll
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\bin\Debug\net6.0\EmployeeService.pdb
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.AssemblyReference.cache
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfoInputs.cache
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.AssemblyInfo.cs
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.csproj.CoreCompileInputs.cache
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.dll
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\refint\EmployeeService.dll
-C:\Users\2120451\source\repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\EmployeeService.pdb
-C:\Users\2120451\Source\Repos\UnitTestMasters\Session1\Assignment1\EmployeeService\EmployeeService\obj\Debug\net6.0\ref\EmployeeService.dll
