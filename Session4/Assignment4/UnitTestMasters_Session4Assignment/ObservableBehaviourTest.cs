@@ -7,14 +7,23 @@ namespace UnitTestMasters_Session4Assignment
         {
             // Arrange
             var repository = new EmployeeRepository();
-            var employeeId = 1;
+            var employee = new Employee()
+            {
+                Id = 1,
+                FirstName = "Juan",
+                LastName = "Dela Cruz",
+                Email = "juan.delacruz@softvision.com"
+            };
 
             // Act
-            var result = repository.GetEmployee(employeeId);
+            var result = repository.GetEmployee(employee.Id);
 
             // Assert - Answer Here
             Assert.NotNull(result);
-            Assert.Equal(employeeId, result.Id);
+            Assert.Equal(employee.Id, result.Id);
+            Assert.Equal(employee.FirstName, result.FirstName);
+            Assert.Equal(employee.LastName, result.LastName);
+            Assert.Equal(employee.Email, result.Email);
         }
 
         [Fact]
