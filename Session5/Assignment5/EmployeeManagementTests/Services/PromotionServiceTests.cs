@@ -1,25 +1,33 @@
-﻿using Xunit;
-using EmployeeManagement.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EmployeeManagement.Model;
+using EmployeeManagement.Repository;
+using Moq;
+using Moq.Protected;
+using System.Net;
 
 namespace EmployeeManagement.Services.Tests
 {
     public class PromotionServiceTests
     {
+       
         [Fact()]
-        public void PromotionServiceTest()
+        public void PromoteInternalEmployee_Returns_EligibleForPromotion_True()
         {
-            Assert.True(false, "This test needs an implementation");
-        }
+            // Arrange
+            var _mockEmployeeRepo = new Mock<IEmployeeRepository>();
+            var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
+            mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
+                .ReturnsAsync(new HttpResponseMessage { StatusCode = HttpStatusCode.OK, Content = new StringContent("{\"eligibleForPromotion\":true}") });
+            var mockClient = new HttpClient(mockHttpMessageHandler.Object);
+            _mockEmployeeRepo.Setup(c => c.SaveChangesAsync()).Returns(() => Task.Run(() => { })).Verifiable();
+            var sut = new PromotionService(mockClient, _mockEmployeeRepo.Object);
 
-        [Fact()]
-        public void PromoteInternalEmployeeAsyncTest()
-        {
-            Assert.True(false, "This test needs an implementation");
+            // Act
+            var result = sut.PromoteInternalEmployeeAsync(new InternalEmployee { EmployeeId = 100, JobLevel = 1 });
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.True(result.Result);
         }
     }
 }
