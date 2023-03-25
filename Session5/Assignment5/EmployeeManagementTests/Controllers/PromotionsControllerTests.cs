@@ -12,8 +12,8 @@ namespace EmployeeManagement.Controllers.Tests
         {
             // Arrange
             var _stubEmployeeService = new Mock<IEmployeeService>();
-            var _stubPromotionService = new Mock<IPromotionService>();
-            var sut = new PromotionsController(_stubEmployeeService.Object, _stubPromotionService.Object);
+            var _mockPromotionService = new Mock<IPromotionService>();
+            var sut = new PromotionsController(_stubEmployeeService.Object, _mockPromotionService.Object);
             var internalEmployeeToPromote = new InternalEmployee
             {
                 EmployeeId = 1,
@@ -25,7 +25,7 @@ namespace EmployeeManagement.Controllers.Tests
             };
 
             _stubEmployeeService.Setup(x => x.FetchInternalEmployeeAsync(1)).ReturnsAsync(internalEmployeeToPromote);
-            _stubPromotionService.Setup(x => x.PromoteInternalEmployeeAsync(internalEmployeeToPromote)).ReturnsAsync(true);
+            _mockPromotionService.Setup(x => x.PromoteInternalEmployeeAsync(internalEmployeeToPromote)).ReturnsAsync(true);
 
             // Act
             var result = (OkObjectResult)sut.CreatePromotion(promotionForCreation).Result;

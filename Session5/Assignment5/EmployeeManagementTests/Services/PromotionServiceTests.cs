@@ -14,13 +14,13 @@ namespace EmployeeManagement.Services.Tests
         {
             // Arrange
             var _mockEmployeeRepo = new Mock<IEmployeeRepository>();
-            var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
-            mockHttpMessageHandler.Protected()
+            var _mockHttpMessageHandler = new Mock<HttpMessageHandler>();
+            _mockHttpMessageHandler.Protected()
                 .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
                 .ReturnsAsync(new HttpResponseMessage { StatusCode = HttpStatusCode.OK, Content = new StringContent("{\"eligibleForPromotion\":true}") });
-            var mockClient = new HttpClient(mockHttpMessageHandler.Object);
+            var _mockClient = new HttpClient(_mockHttpMessageHandler.Object);
             _mockEmployeeRepo.Setup(c => c.SaveChangesAsync()).Returns(() => Task.Run(() => { })).Verifiable();
-            var sut = new PromotionService(mockClient, _mockEmployeeRepo.Object);
+            var sut = new PromotionService(_mockClient, _mockEmployeeRepo.Object);
 
             // Act
             var result = sut.PromoteInternalEmployeeAsync(new InternalEmployee { EmployeeId = 100, JobLevel = 1 });
