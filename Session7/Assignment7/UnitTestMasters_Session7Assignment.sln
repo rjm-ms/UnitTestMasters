@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMasters_Session7Assignment", "UnitTestMasters_Session7Assignment\UnitTestMasters_Session7Assignment.csproj", "{8AA43164-3B96-4711-9F7C-4E4F78939DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestMasters_Session7Assignment", "UnitTestMasters_Session7Assignment\UnitTestMasters_Session7Assignment.csproj", "{8AA43164-3B96-4711-9F7C-4E4F78939DE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMasters_Session7AssignmentTests", "UnitTestMasters_Session7AssignmentTests\UnitTestMasters_Session7AssignmentTests.csproj", "{339B75C0-E495-4507-B0DF-161627CBD0CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8AA43164-3B96-4711-9F7C-4E4F78939DE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA43164-3B96-4711-9F7C-4E4F78939DE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA43164-3B96-4711-9F7C-4E4F78939DE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{339B75C0-E495-4507-B0DF-161627CBD0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{339B75C0-E495-4507-B0DF-161627CBD0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{339B75C0-E495-4507-B0DF-161627CBD0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{339B75C0-E495-4507-B0DF-161627CBD0CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
