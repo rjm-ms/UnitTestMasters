@@ -9,14 +9,16 @@ namespace UnitTestMasters_Session7Assignment.Services.Tests
     public class OrderServiceTests
     {
         private Mock<IOrderRepository> _mockOrderRepository;
-        private Mock<IMessageBus> _mockBus;
+        private Mock<IBus> _mockBus;
+        private Mock<MessageBus> _mockMessageBus;
         private OrderService _orderService;
 
         public OrderServiceTests()
         {
             _mockOrderRepository = new Mock<IOrderRepository>();
-            _mockBus = new Mock<IMessageBus>();
-            _orderService = new OrderService(_mockOrderRepository.Object, _mockBus.Object);
+            _mockBus = new Mock<IBus>();
+            _mockMessageBus = new Mock<MessageBus>(_mockBus.Object);
+            _orderService = new OrderService(_mockOrderRepository.Object, _mockMessageBus.Object);
         }
 
         [Fact()]

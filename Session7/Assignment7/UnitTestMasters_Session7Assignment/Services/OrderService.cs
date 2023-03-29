@@ -9,9 +9,9 @@ namespace UnitTestMasters_Session7Assignment.Services
     public class OrderService : IOrderService
     {
         IOrderRepository _orderRepo;
-        IMessageBus _messageBus;
+        MessageBus _messageBus;
 
-        public OrderService(IOrderRepository  orderRepo, IMessageBus messageBus)
+        public OrderService(IOrderRepository  orderRepo, MessageBus messageBus)
         {
             _orderRepo = orderRepo;
             _messageBus = messageBus;
@@ -26,7 +26,7 @@ namespace UnitTestMasters_Session7Assignment.Services
             order.SetTotalPrice(customer.LoyaltyLevel, products);
 
             _orderRepo.SaveOrder(order);
-            _messageBus.Send($"Subject: ORDER; Type: Order Processed; Id: {orderId};");
+            _messageBus.SendOrderProcessedMessage(orderId);
         }
     }
 }

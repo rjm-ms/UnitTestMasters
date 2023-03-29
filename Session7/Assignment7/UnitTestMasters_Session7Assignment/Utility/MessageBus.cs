@@ -1,13 +1,15 @@
 ﻿namespace UnitTestMasters_Session7Assignment.Utility
 {
-    public class MessageBus : IMessageBus
+    public class MessageBus
     {
-        public void Send(string message)
+        private readonly IBus _bus;
+        public MessageBus(IBus bus)
         {
-            if (string.IsNullOrEmpty(message))
-            {
-                throw new Exception("Something is wrong");
-            }
+            _bus = bus;
+        }
+        public void SendOrderProcessedMessage(int orderId)
+        {
+            _bus.Send($"Subject: ORDER; Type: Order Processed; Id: {orderId};");
         }
     }
 }
