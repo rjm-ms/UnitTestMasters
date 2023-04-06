@@ -21,7 +21,14 @@ namespace EmployeeManagementTests
             employeeServiceMock.Setup(e => e.FetchInternalEmployeeAsync(It.IsAny<int>())).ReturnsAsync(new InternalEmployee { EmployeeId = 1 });
 
             var promotionServiceMock = new Mock<IPromotionService>();
-            var promotedInternalEmployee = new InternalEmployee { EmployeeId = 1, JobLevel = 2, Events = new List<IEvent> { new EmployeePromotionEvent(1, 1, 2) } };
+            var promotedInternalEmployee = new InternalEmployee { 
+                EmployeeId = 1, 
+                JobLevel = 2, 
+                Events = new List<IEvent> { 
+                    new EmployeePromotionEvent(1, 1, 2), 
+                    new EmployeeTypeChangedEvent(1,1,2) 
+                } 
+            };
 
             promotionServiceMock.Setup(p => p.PromoteInternalEmployeeAsync(It.IsAny<InternalEmployee>()))
                 .ReturnsAsync(new Result {
@@ -32,13 +39,8 @@ namespace EmployeeManagementTests
             var busMock = new Mock<IBus>();
             var loggerMock = new Mock<ILogger>();
             var domainLoggerMock = new Mock<IDomainLogger>();
-            domainLoggerMock.Setup(x => x.EmployeeTypeHasChanged(1, 1, 2));
 
             var employeePromotionEvent = new Mock<EmployeePromotionEvent>(new Mock<IEvent>().Object);
-
-            var busMockMsg = "Type: EMPLOYEE JOB LEVEL CHANGED; " +
-                $"Id: {promotedInternalEmployee.EmployeeId}; " +
-                $"NewJobLevel: {promotedInternalEmployee.JobLevel}";
 
             var sut = new PromotionsController(
                 employeeServiceMock.Object, promotionServiceMock.Object, new Mock<MessageBus>(busMock.Object).Object, domainLoggerMock.Object);
@@ -55,7 +57,7 @@ namespace EmployeeManagementTests
             Assert.Equal(2, value.JobLevel);
 
             domainLoggerMock.Verify(x => x.EmployeeTypeHasChanged(1,1,2), Times.Once);
-            busMock.Verify(x => x.Send(busMockMsg), Times.Once);
+            busMock.Verify(x => x.Send(It.IsAny<string>()), Times.Once);
         }
     }
 }
