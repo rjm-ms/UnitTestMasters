@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestMasters_Session3AssignmentLib", "UnitTestMasters_Session3AssignmentLib\UnitTestMasters_Session3AssignmentLib.csproj", "{2FD072CB-2552-48DE-9089-18A0024B98D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestMasters_Session3AssignmentLibTests", "UnitTestMasters_Session3AssignmentLibTests\UnitTestMasters_Session3AssignmentLibTests.csproj", "{A7F93F2C-41CB-4102-93CD-E544FA850006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FD072CB-2552-48DE-9089-18A0024B98D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD072CB-2552-48DE-9089-18A0024B98D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD072CB-2552-48DE-9089-18A0024B98D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD072CB-2552-48DE-9089-18A0024B98D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F93F2C-41CB-4102-93CD-E544FA850006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F93F2C-41CB-4102-93CD-E544FA850006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F93F2C-41CB-4102-93CD-E544FA850006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F93F2C-41CB-4102-93CD-E544FA850006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47C15F4C-6586-4055-8F40-695BB9768B62}
+	EndGlobalSection
+EndGlobal
